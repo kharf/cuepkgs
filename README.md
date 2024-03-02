@@ -20,7 +20,7 @@ Import a package from one of the modules found in `github.com/kharf/cuepkgs/modu
 import "github.com/kharf/cuepkgs/modules/xxx/..."
 ```
 
-Run `cue mod tidy`
+Run `cue mod tidy`.
 
 Example:
 
