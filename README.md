@@ -10,7 +10,7 @@ In this repository, I maintain a selection of CUE packages that you can use as p
 ## Prerequisites
 
 Ensure you have CUE installed to use these modules.
-For installation details, refer to the [CUE Module References Documentation](https://alpha.cuelang.org/docs/reference/modules/#intro).
+For details about how to use modules, refer to the [CUE Module References Documentation](https://alpha.cuelang.org/docs/reference/modules/#intro).
 
 ## Usage
 
