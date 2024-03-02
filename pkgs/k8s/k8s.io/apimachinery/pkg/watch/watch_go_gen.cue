@@ -4,7 +4,7 @@
 
 package watch
 
-import "github.com/cuepkgs/pkgs/k8s/k8s.io/apimachinery/pkg/runtime"
+import "github.com/kharf/cuepkgs/pkgs/k8s/k8s.io/apimachinery/pkg/runtime"
 
 // Interface can be implemented by anything that knows how to watch and report changes.
 #Interface: _

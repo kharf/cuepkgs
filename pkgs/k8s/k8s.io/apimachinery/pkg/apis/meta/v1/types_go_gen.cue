@@ -15,8 +15,8 @@
 package v1
 
 import (
-	"github.com/cuepkgs/pkgs/k8s/k8s.io/apimachinery/pkg/types"
-	"github.com/cuepkgs/pkgs/k8s/k8s.io/apimachinery/pkg/runtime"
+	"github.com/kharf/cuepkgs/pkgs/k8s/k8s.io/apimachinery/pkg/types"
+	"github.com/kharf/cuepkgs/pkgs/k8s/k8s.io/apimachinery/pkg/runtime"
 )
 
 // TypeMeta describes an individual object in an API response or request

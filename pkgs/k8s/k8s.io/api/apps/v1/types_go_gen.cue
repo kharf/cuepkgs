@@ -5,10 +5,10 @@
 package v1
 
 import (
-	metav1 "github.com/cuepkgs/pkgs/k8s/k8s.io/apimachinery/pkg/apis/meta/v1"
-	"github.com/cuepkgs/pkgs/k8s/k8s.io/apimachinery/pkg/util/intstr"
-	"github.com/cuepkgs/pkgs/k8s/k8s.io/api/core/v1"
-	"github.com/cuepkgs/pkgs/k8s/k8s.io/apimachinery/pkg/runtime"
+	metav1 "github.com/kharf/cuepkgs/pkgs/k8s/k8s.io/apimachinery/pkg/apis/meta/v1"
+	"github.com/kharf/cuepkgs/pkgs/k8s/k8s.io/apimachinery/pkg/util/intstr"
+	"github.com/kharf/cuepkgs/pkgs/k8s/k8s.io/api/core/v1"
+	"github.com/kharf/cuepkgs/pkgs/k8s/k8s.io/apimachinery/pkg/runtime"
 )
 
 #ControllerRevisionHashLabelKey: "controller-revision-hash"
