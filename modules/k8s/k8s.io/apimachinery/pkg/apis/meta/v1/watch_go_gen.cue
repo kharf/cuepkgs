@@ -5,8 +5,8 @@
 package v1
 
 import (
-	"github.com/kharf/cuepkgs/pkgs/k8s/k8s.io/apimachinery/pkg/runtime"
-	"github.com/kharf/cuepkgs/pkgs/k8s/k8s.io/apimachinery/pkg/watch"
+	"github.com/kharf/cuepkgs/modules/k8s/k8s.io/apimachinery/pkg/runtime"
+	"github.com/kharf/cuepkgs/modules/k8s/k8s.io/apimachinery/pkg/watch"
 )
 
 // Event represents a single event to a watched resource.
