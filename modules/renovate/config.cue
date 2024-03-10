@@ -44,26 +44,26 @@ package renovate
 	allowedPostUpgradeCommands?: [...string]
 
 	// Configuration object for the ansible manager
-	ansible?: _schema_1 | *{
+	ansible?: #Schema | *{
 		fileMatch: ["(^|/)tasks/[^/]+\\.ya?ml$"]
 		...
 	}
 
 	// Configuration object for the ansible-galaxy manager
-	"ansible-galaxy"?: _schema_5 | *{
+	"ansible-galaxy"?: #Schema | *{
 		fileMatch: ["(^|/)(galaxy|requirements)(\\.ansible)?\\.ya?ml$"]
 		...
 	}
 
 	// Configuration object for the argocd manager
-	argocd?: _schema_A | *{
+	argocd?: #Schema | *{
 		fileMatch:
 		[]
 		...
 	}
 
 	// Configuration object for the asdf manager
-	asdf?: _schema_8 | *{
+	asdf?: #Schema | *{
 		fileMatch: ["(^|/)\\.tool-versions$"]
 		...
 	}
@@ -121,7 +121,7 @@ package renovate
 	automergeType?: "branch" | "pr" | "pr-comment" | *"pr"
 
 	// Configuration object for the azure-pipelines manager
-	"azure-pipelines"?: _schema_E | *{
+	"azure-pipelines"?: #Schema | *{
 		fileMatch: ["azure.*pipelines?.*\\.ya?ml$"]
 		enabled: false
 		...
@@ -141,32 +141,32 @@ package renovate
 	baseDir?: string
 
 	// Configuration object for the batect manager
-	batect?: _schema_B | *{
+	batect?: #Schema | *{
 		fileMatch: ["(^|/)batect(-bundle)?\\.ya?ml$"]
 		...
 	}
 
 	// Configuration object for the batect-wrapper manager
-	"batect-wrapper"?: _schema_36 | *{
+	"batect-wrapper"?: #Schema | *{
 		fileMatch: ["(^|/)batect$"]
 		versioning: "semver"
 		...
 	}
 
 	// Configuration object for the bazel manager
-	bazel?: _schema_9 | *{
+	bazel?: #Schema | *{
 		fileMatch: ["(^|/)WORKSPACE(|\\.bazel)$", "\\.bzl$"]
 		...
 	}
 
 	// Configuration object for the bazel-module manager
-	"bazel-module"?: _schema_3 | *{
+	"bazel-module"?: #Schema | *{
 		fileMatch: ["(^|/)MODULE\\.bazel$"]
 		...
 	}
 
 	// Configuration object for the bazelisk manager
-	bazelisk?: _schema_A2 | *{
+	bazelisk?: #Schema | *{
 		fileMatch: ["(^|/)\\.bazelversion$"]
 		pinDigests: false
 		versioning: "semver"
@@ -182,7 +182,7 @@ package renovate
 	bbUseDevelopmentBranch?: bool | *false
 
 	// Configuration object for the bicep manager
-	bicep?: _schema_F | *{
+	bicep?: #Schema | *{
 		fileMatch: ["\\.bicep$"]
 		...
 	}
@@ -193,7 +193,7 @@ package renovate
 	binarySource?: "global" | "docker" | "install" | "hermit" | *"install"
 
 	// Configuration object for the bitbucket-pipelines manager
-	"bitbucket-pipelines"?: _schema_D0 | *{
+	"bitbucket-pipelines"?: #Schema | *{
 		fileMatch: ["(^|/)\\.?bitbucket-pipelines\\.ya?ml$"]
 		...
 	}
@@ -219,7 +219,7 @@ package renovate
 	branchTopic?: string | *"{{{depNameSanitized}}}-{{{newMajor}}}{{#if separateMinorPatch}}{{#if isPatch}}.{{{newMinor}}}{{/if}}{{/if}}.x{{#if isLockfileUpdate}}-lockfile{{/if}}"
 
 	// Configuration object for the buildkite manager
-	buildkite?: _schema_EF | *{
+	buildkite?: #Schema | *{
 		fileMatch: ["buildkite\\.ya?ml", "\\.buildkite/.+\\.ya?ml$"]
 		commitMessageTopic: "buildkite plugin {{depName}}"
 		commitMessageExtra: "to {{#if isMajor}}{{{prettyNewMajor}}}{{else}}{{{newValue}}}{{/if}}"
@@ -230,7 +230,7 @@ package renovate
 	bumpVersion?: "major" | "minor" | "patch" | "prerelease"
 
 	// Configuration object for the bun manager
-	bun?: _schema_0 | *{
+	bun?: #Schema | *{
 		fileMatch: ["(^|/)bun\\.lockb$"]
 		digest: {
 			prBodyDefinitions: {
@@ -247,7 +247,7 @@ package renovate
 	}
 
 	// Configuration object for the bundler manager
-	bundler?: _schema_34 | *{
+	bundler?: #Schema | *{
 		fileMatch: ["(^|/)Gemfile$"]
 		versioning: "ruby"
 		...
@@ -261,18 +261,18 @@ package renovate
 	cacheHardTtlMinutes?: int | *10080
 
 	// An object that contains cache namespace TTL override values.
-	cacheTtlOverride?: _schema_8B | *{
+	cacheTtlOverride?: #Schema | *{
 		...
 	}
 
 	// Configuration object for the cake manager
-	cake?: _schema_38 | *{
+	cake?: #Schema | *{
 		fileMatch: ["\\.cake$"]
 		...
 	}
 
 	// Configuration object for the cargo manager
-	cargo?: _schema_2 | *{
+	cargo?: #Schema | *{
 		commitMessageTopic: "Rust crate {{depName}}"
 		fileMatch: ["(^|/)Cargo\\.toml$"]
 		versioning: "cargo"
@@ -280,7 +280,7 @@ package renovate
 	}
 
 	// Configuration object for the cdnurl manager
-	cdnurl?: _schema_DB | *{
+	cdnurl?: #Schema | *{
 		fileMatch: []
 		versioning: "semver"
 		...
@@ -291,7 +291,7 @@ package renovate
 	checkedBranches?: [...string]
 
 	// Configuration object for the circleci manager
-	circleci?: _schema_3D | *{
+	circleci?: #Schema | *{
 		fileMatch: ["(^|/)\\.circleci/.+\\.ya?ml$"]
 		...
 	}
@@ -300,13 +300,13 @@ package renovate
 	cloneSubmodules?: bool | *false
 
 	// Configuration object for the cloudbuild manager
-	cloudbuild?: _schema_C | *{
+	cloudbuild?: #Schema | *{
 		fileMatch: ["(^|/)cloudbuild\\.ya?ml"]
 		...
 	}
 
 	// Configuration object for the cocoapods manager
-	cocoapods?: _schema_DD | *{
+	cocoapods?: #Schema | *{
 		fileMatch: ["(^|/)Podfile$"]
 		versioning: "ruby"
 		...
@@ -344,7 +344,7 @@ package renovate
 	commitMessageTopic?: string | *"dependency {{depName}}"
 
 	// Configuration object for the composer manager
-	composer?: _schema_44D | *{
+	composer?: #Schema | *{
 		fileMatch: ["(^|/)([\\w-]*)composer\\.json$"]
 		versioning: "composer"
 		...
@@ -355,7 +355,7 @@ package renovate
 	composerIgnorePlatformReqs?: [...string]
 
 	// Configuration object for the conan manager
-	conan?: _schema_FA | *{
+	conan?: #Schema | *{
 		fileMatch: ["(^|/)conanfile\\.(txt|py)$"]
 		datasource: "conan"
 		versioning: "conan"
@@ -376,7 +376,7 @@ package renovate
 
 	// Configuration object to define language or manager version
 	// constraints.
-	constraints?: _schema_9F | *{
+	constraints?: #Schema | *{
 		...
 	}
 
@@ -389,20 +389,20 @@ package renovate
 	containerbaseDir?: string
 
 	// Configuration object for the cpanfile manager
-	cpanfile?: _schema_EE | *{
+	cpanfile?: #Schema | *{
 		fileMatch: ["(^|/)cpanfile$"]
 		...
 	}
 
 	// Configuration object for the crossplane manager
-	crossplane?: _schema_C2 | *{
+	crossplane?: #Schema | *{
 		fileMatch:
 		[]
 		...
 	}
 
 	// Defines custom datasources for usage by managers.
-	customDatasources?: _schema_B5 & [...{
+	customDatasources?: #Schema & [...{
 		description?: [...string] | string
 
 		// Template for generating a `defaultRegistryUrl` for custom
@@ -421,7 +421,7 @@ package renovate
 
 	// Custom environment variables for child processes and sidecar
 	// Docker containers.
-	customEnvVariables?: _schema_F9 | *{
+	customEnvVariables?: #Schema | *{
 		...
 	}
 
@@ -480,7 +480,7 @@ package renovate
 	}]
 
 	// Customize sections in the Dependency Dashboard issue.
-	customizeDashboard?: _schema_E2 & {
+	customizeDashboard?: #Schema & {
 		[string]: string
 	} | *{
 		...
@@ -521,7 +521,7 @@ package renovate
 	dependencyDashboardTitle?: string | *"Dependency Dashboard"
 
 	// Configuration object for the deps-edn manager
-	"deps-edn"?: _schema_82 | *{
+	"deps-edn"?: #Schema | *{
 		fileMatch: ["(^|/)(?:deps|bb)\\.edn$"]
 		versioning: "maven"
 		...
@@ -540,7 +540,7 @@ package renovate
 
 	// Configuration to apply when updating a digest (no change in
 	// tag/version).
-	digest?: _schema_4 | *{
+	digest?: #Schema | *{
 		branchTopic:        "{{{depNameSanitized}}}-digest"
 		commitMessageExtra: "to {{newDigestShort}}"
 		commitMessageTopic: "{{{depName}}} digest"
@@ -548,7 +548,7 @@ package renovate
 	}
 
 	// Configuration object for the docker-compose manager
-	"docker-compose"?: _schema_B49 | *{
+	"docker-compose"?: #Schema | *{
 		fileMatch: ["(^|/)(?:docker-)?compose[^/]*\\.ya?ml$"]
 		...
 	}
@@ -570,7 +570,7 @@ package renovate
 	dockerUser?: string
 
 	// Configuration object for the dockerfile manager
-	dockerfile?: _schema_A9 | *{
+	dockerfile?: #Schema | *{
 		fileMatch: ["(^|/|\\.)([Dd]ocker|[Cc]ontainer)file$", "(^|/)([Dd]ocker|[Cc]ontainer)file[^/]*$"]
 		...
 	}
@@ -580,7 +580,7 @@ package renovate
 	draftPR?: bool | *false
 
 	// Configuration object for the droneci manager
-	droneci?: _schema_DF | *{
+	droneci?: #Schema | *{
 		fileMatch: ["(^|/)\\.drone\\.yml$"]
 		...
 	}
@@ -597,14 +597,14 @@ package renovate
 	enabledManagers?: [...string]
 
 	// An object containing configuration encrypted with project key.
-	encrypted?: _schema_ED | *null
+	encrypted?: #Schema | *null
 
 	// Custom endpoint to use.
 	endpoint?: string | *null
 
 	// Environment variables that Renovate uses when executing package
 	// manager commands.
-	env?: _schema_CBE | *{
+	env?: #Schema | *{
 		...
 	}
 
@@ -641,13 +641,13 @@ package renovate
 	filterUnavailableUsers?: bool | *false
 
 	// Configuration object for the fleet manager
-	fleet?: _schema_C3 | *{
+	fleet?: #Schema | *{
 		fileMatch: ["(^|/)fleet\\.ya?ml"]
 		...
 	}
 
 	// Configuration object for the flux manager
-	flux?: _schema_74 | *{
+	flux?: #Schema | *{
 		fileMatch: ["(?:^|/)gotk-components\\.ya?ml$"]
 		...
 	}
@@ -657,7 +657,7 @@ package renovate
 
 	// Any configuration set in this object will force override
 	// existing settings.
-	force?: _schema_E1
+	force?: #Schema
 
 	// Decides if CLI configuration options are moved to the `force`
 	// config section.
@@ -683,14 +683,14 @@ package renovate
 	forkToken?: string
 
 	// Configuration object for the fvm manager
-	fvm?: _schema_6 | *{
+	fvm?: #Schema | *{
 		fileMatch: ["(^|/)\\.fvm/fvm_config\\.json$"]
 		versioning: "semver"
 		...
 	}
 
 	// Configuration object for the git-submodules manager
-	"git-submodules"?: _schema_C1 | *{
+	"git-submodules"?: #Schema | *{
 		enabled:    false
 		versioning: "git"
 		fileMatch: ["(^|/)\\.gitmodules$"]
@@ -724,7 +724,7 @@ package renovate
 	gitUrl?: "default" | "ssh" | "endpoint" | *"default"
 
 	// Configuration object for the github-actions manager
-	"github-actions"?: _schema_62 | *{
+	"github-actions"?: #Schema | *{
 		fileMatch: ["(^|/)(workflow-templates|\\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\\.ya?ml$", "(^|/)action\\.ya?ml$"]
 		...
 	}
@@ -733,13 +733,13 @@ package renovate
 	githubTokenWarn?: bool | *true
 
 	// Configuration object for the gitlabci manager
-	gitlabci?: _schema_2C | *{
+	gitlabci?: #Schema | *{
 		fileMatch: ["\\.gitlab-ci\\.ya?ml$"]
 		...
 	}
 
 	// Configuration object for the gitlabci-include manager
-	"gitlabci-include"?: _schema_28 | *{
+	"gitlabci-include"?: #Schema | *{
 		fileMatch: ["\\.gitlab-ci\\.ya?ml$"]
 		...
 	}
@@ -752,14 +752,14 @@ package renovate
 	goGetDirs?: [...string] | *["./..."]
 
 	// Configuration object for the gomod manager
-	gomod?: _schema_D | *{
+	gomod?: #Schema | *{
 		fileMatch: ["(^|/)go\\.mod$"]
 		pinDigests: false
 		...
 	}
 
 	// Configuration object for the gradle manager
-	gradle?: _schema_46 | *{
+	gradle?: #Schema | *{
 		fileMatch: ["\\.gradle(\\.kts)?$", "(^|/)gradle\\.properties$", "(^|/)gradle/.+\\.toml$", "(^|/)buildSrc/.+\\.kt$", "\\.versions\\.toml$", "(^|/)versions.props$", "(^|/)versions.lock$"]
 		timeout:    600
 		versioning: "gradle"
@@ -767,14 +767,14 @@ package renovate
 	}
 
 	// Configuration object for the gradle-wrapper manager
-	"gradle-wrapper"?: _schema_F2 | *{
+	"gradle-wrapper"?: #Schema | *{
 		fileMatch: ["(^|/)gradle/wrapper/gradle-wrapper\\.properties$"]
 		versioning: "gradle"
 		...
 	}
 
 	// Config if `groupName` is enabled.
-	group?: _schema_21C | *{
+	group?: #Schema | *{
 		branchTopic:        "{{{groupSlug}}}"
 		commitMessageTopic: "{{{groupName}}}"
 		...
@@ -792,7 +792,7 @@ package renovate
 	hashedBranchLength?: int | *null
 
 	// Configuration object for the helm-requirements manager
-	"helm-requirements"?: _schema_45 | *{
+	"helm-requirements"?: #Schema | *{
 		registryAliases: {
 			stable: "https://charts.helm.sh/stable"
 			...
@@ -803,7 +803,7 @@ package renovate
 	}
 
 	// Configuration object for the helm-values manager
-	"helm-values"?: _schema_C5 | *{
+	"helm-values"?: #Schema | *{
 		commitMessageTopic: "helm values {{depName}}"
 		fileMatch: ["(^|/)values\\.ya?ml$"]
 		pinDigests: false
@@ -811,7 +811,7 @@ package renovate
 	}
 
 	// Configuration object for the helmfile manager
-	helmfile?: _schema_1F | *{
+	helmfile?: #Schema | *{
 		registryAliases: {
 			stable: "https://charts.helm.sh/stable"
 			...
@@ -822,14 +822,14 @@ package renovate
 	}
 
 	// Configuration object for the helmsman manager
-	helmsman?: _schema_83 | *{
+	helmsman?: #Schema | *{
 		fileMatch:
 		[]
 		...
 	}
 
 	// Configuration object for the helmv3 manager
-	helmv3?: _schema_95 | *{
+	helmv3?: #Schema | *{
 		registryAliases: {
 			stable: "https://charts.helm.sh/stable"
 			...
@@ -840,7 +840,7 @@ package renovate
 	}
 
 	// Configuration object for the hermit manager
-	hermit?: _schema_11 | *{
+	hermit?: #Schema | *{
 		fileMatch: ["(^|/)bin/hermit$"]
 		excludeCommitPaths: ["**/bin/hermit"]
 		versioning: "hermit"
@@ -848,7 +848,7 @@ package renovate
 	}
 
 	// Configuration object for the homebrew manager
-	homebrew?: _schema_F4 | *{
+	homebrew?: #Schema | *{
 		commitMessageTopic: "Homebrew Formula {{depName}}"
 		fileMatch: ["^Formula/[^/]+[.]rb$"]
 		...
@@ -886,7 +886,7 @@ package renovate
 
 		// Put fields to be forwarded to the HTTP request headers in the
 		// headers config option.
-		headers?: _schema_25
+		headers?: #Schema
 
 		// hostType for a package rule. Can be a platform name or a
 		// datasource name.
@@ -923,7 +923,7 @@ package renovate
 	}]
 
 	// Configuration object for the html manager
-	html?: _schema_7F | *{
+	html?: #Schema | *{
 		fileMatch: ["\\.html?$"]
 		versioning: "semver"
 		digest: {
@@ -986,13 +986,13 @@ package renovate
 	internalChecksFilter?: "strict" | "flexible" | "none" | *"strict"
 
 	// Configuration object for the jenkins manager
-	jenkins?: _schema_66A | *{
+	jenkins?: #Schema | *{
 		fileMatch: ["(^|/)plugins\\.(txt|ya?ml)$"]
 		...
 	}
 
 	// Configuration object for the jsonnet-bundler manager
-	"jsonnet-bundler"?: _schema_A7 | *{
+	"jsonnet-bundler"?: #Schema | *{
 		fileMatch: ["(^|/)jsonnetfile\\.json$"]
 		datasource: "git-tags"
 		...
@@ -1003,20 +1003,20 @@ package renovate
 	keepUpdatedLabel?: string
 
 	// Configuration object for the kotlin-script manager
-	"kotlin-script"?: _schema_88 | *{
+	"kotlin-script"?: #Schema | *{
 		fileMatch: ["^.+\\.main\\.kts$"]
 		...
 	}
 
 	// Configuration object for the kubernetes manager
-	kubernetes?: _schema_1E | *{
+	kubernetes?: #Schema | *{
 		fileMatch:
 		[]
 		...
 	}
 
 	// Configuration object for the kustomize manager
-	kustomize?: _schema_42 | *{
+	kustomize?: #Schema | *{
 		fileMatch: ["(^|/)kustomization\\.ya?ml$"]
 		pinDigests: false
 		...
@@ -1026,14 +1026,14 @@ package renovate
 	labels?: [...string]
 
 	// Configuration object for the leiningen manager
-	leiningen?: _schema_7 | *{
+	leiningen?: #Schema | *{
 		fileMatch: ["(^|/)project\\.clj$"]
 		versioning: "maven"
 		...
 	}
 
 	// Configuration for lock file maintenance.
-	lockFileMaintenance?: _schema_23 | *{
+	lockFileMaintenance?: #Schema | *{
 		enabled:             false
 		recreateWhen:        "always"
 		rebaseStalePrs:      true
@@ -1072,33 +1072,33 @@ package renovate
 	}]
 
 	// Configuration to apply when an update type is `major`.
-	major?: _schema_2CC | *{
+	major?: #Schema | *{
 		...
 	}
 
 	// Configuration object for the maven manager
-	maven?: _schema_CD | *{
+	maven?: #Schema | *{
 		fileMatch: ["(^|/|\\.)pom\\.xml$", "^(((\\.mvn)|(\\.m2))/)?settings\\.xml$"]
 		versioning: "maven"
 		...
 	}
 
 	// Configuration object for the maven-wrapper manager
-	"maven-wrapper"?: _schema_16 | *{
+	"maven-wrapper"?: #Schema | *{
 		fileMatch: ["(^|\\/).mvn/wrapper/maven-wrapper.properties$"]
 		versioning: "maven"
 		...
 	}
 
 	// Configuration object for the meteor manager
-	meteor?: _schema_AC | *{
+	meteor?: #Schema | *{
 		fileMatch: ["(^|/)package\\.js$"]
 		...
 	}
 
 	// Define presets here which have been removed or renamed and
 	// should be migrated automatically.
-	migratePresets?: _schema_71 & {
+	migratePresets?: #Schema & {
 		[string]: string
 	} | *{
 		...
@@ -1112,25 +1112,25 @@ package renovate
 	minimumReleaseAge?: string | *null
 
 	// Configuration to apply when an update type is `minor`.
-	minor?: _schema_3E8 | *{
+	minor?: #Schema | *{
 		...
 	}
 
 	// Configuration object for the mint manager
-	mint?: _schema_E00 | *{
+	mint?: #Schema | *{
 		fileMatch: ["(^|/)Mintfile$"]
 		...
 	}
 
 	// Configuration object for the mix manager
-	mix?: _schema_6F | *{
+	mix?: #Schema | *{
 		fileMatch: ["(^|/)mix\\.exs$"]
 		versioning: "hex"
 		...
 	}
 
 	// Configuration object for the nix manager
-	nix?: _schema_B1B | *{
+	nix?: #Schema | *{
 		fileMatch: ["(^|/)flake\\.nix$"]
 		commitMessageTopic: "nixpkgs"
 		commitMessageExtra: "to {{newValue}}"
@@ -1139,14 +1139,14 @@ package renovate
 	}
 
 	// Configuration object for the nodenv manager
-	nodenv?: _schema_32 | *{
+	nodenv?: #Schema | *{
 		fileMatch: ["(^|/)\\.node-version$"]
 		versioning: "node"
 		...
 	}
 
 	// Configuration object for the npm manager
-	npm?: _schema_61 | *{
+	npm?: #Schema | *{
 		fileMatch: ["(^|/)package\\.json$"]
 		digest: {
 			prBodyDefinitions: {
@@ -1173,13 +1173,13 @@ package renovate
 	npmrcMerge?: bool | *false
 
 	// Configuration object for the nuget manager
-	nuget?: _schema_D47 | *{
+	nuget?: #Schema | *{
 		fileMatch: ["\\.(?:cs|fs|vb)proj$", "\\.(?:props|targets)$", "(^|/)dotnet-tools\\.json$", "(^|/)global\\.json$"]
 		...
 	}
 
 	// Configuration object for the nvm manager
-	nvm?: _schema_5C | *{
+	nvm?: #Schema | *{
 		fileMatch: ["(^|/)\\.nvmrc$"]
 		versioning: "node"
 		pinDigests: false
@@ -1187,7 +1187,7 @@ package renovate
 	}
 
 	// Configuration object for the ocb manager
-	ocb?: _schema_4B | *{
+	ocb?: #Schema | *{
 		fileMatch:
 		[]
 		...
@@ -1205,7 +1205,7 @@ package renovate
 	onboardingCommitMessage?: string | *null
 
 	// Configuration to use for onboarding PRs.
-	onboardingConfig?: _schema_A28 | *{
+	onboardingConfig?: #Schema | *{
 		$schema: "https://docs.renovatebot.com/renovate-schema.json"
 		...
 	}
@@ -1229,7 +1229,7 @@ package renovate
 	optimizeForDisabled?: bool | *false
 
 	// Configuration object for the osgi manager
-	osgi?: _schema_39B | *{
+	osgi?: #Schema | *{
 		fileMatch: ["(^|/)src/main/features/.+\\.json$"]
 		...
 	}
@@ -1371,12 +1371,12 @@ package renovate
 	password?: string
 
 	// Configuration to apply when an update type is `patch`.
-	patch?: _schema_B8 | *{
+	patch?: #Schema | *{
 		...
 	}
 
 	// Configuration object for the pep621 manager
-	pep621?: _schema_BA | *{
+	pep621?: #Schema | *{
 		fileMatch: ["(^|/)pyproject\\.toml$"]
 		...
 	}
@@ -1386,7 +1386,7 @@ package renovate
 	persistRepoData?: bool | *false
 
 	// Configuration to apply when an update type is `pin`.
-	pin?: _schema_B7 | *{
+	pin?: #Schema | *{
 		rebaseWhen:          "behind-base-branch"
 		groupName:           "Pin Dependencies"
 		groupSlug:           "pin-dependencies"
@@ -1401,7 +1401,7 @@ package renovate
 
 	// Configuration to apply when pinning a digest (no change in
 	// tag/version).
-	pinDigest?: _schema_32E | *{
+	pinDigest?: #Schema | *{
 		groupName:           "Pin Dependencies"
 		groupSlug:           "pin-dependencies"
 		commitMessageAction: "Pin"
@@ -1417,7 +1417,7 @@ package renovate
 	pinDigests?: bool | *false
 
 	// Configuration object for the pip-compile manager
-	"pip-compile"?: _schema_49 | *{
+	"pip-compile"?: #Schema | *{
 		fileMatch: []
 		lockFileMaintenance: {
 			enabled:             true
@@ -1429,19 +1429,19 @@ package renovate
 	}
 
 	// Configuration object for the pip_requirements manager
-	pip_requirements?: _schema_5D | *{
+	pip_requirements?: #Schema | *{
 		fileMatch: ["(^|/)[\\w-]*requirements(-\\w+)?\\.(txt|pip)$"]
 		...
 	}
 
 	// Configuration object for the pip_setup manager
-	pip_setup?: _schema_FC | *{
+	pip_setup?: #Schema | *{
 		fileMatch: ["(^|/)setup\\.py$"]
 		...
 	}
 
 	// Configuration object for the pipenv manager
-	pipenv?: _schema_3BD | *{
+	pipenv?: #Schema | *{
 		fileMatch: ["(^|/)Pipfile$"]
 		...
 	}
@@ -1457,7 +1457,7 @@ package renovate
 	platformCommit?: bool | *false
 
 	// Configuration object for the poetry manager
-	poetry?: _schema_CA | *{
+	poetry?: #Schema | *{
 		fileMatch: ["(^|/)pyproject\\.toml$"]
 		...
 	}
@@ -1468,7 +1468,7 @@ package renovate
 
 	// Post-upgrade tasks that are executed before a commit is made by
 	// Renovate.
-	postUpgradeTasks?: _schema_5DB9 & [...{
+	postUpgradeTasks?: #Schema & [...{
 		description?: [...string] | string
 
 		// A list of post-upgrade commands that are executed before a
@@ -1558,7 +1558,7 @@ package renovate
 	prTitleStrict?: bool | *false
 
 	// Configuration object for the pre-commit manager
-	"pre-commit"?: _schema_E7 | *{
+	"pre-commit"?: #Schema | *{
 		commitMessageTopic: "pre-commit hook {{depName}}"
 		enabled:            false
 		fileMatch: ["(^|/)\\.pre-commit-config\\.ya?ml$"]
@@ -1586,7 +1586,7 @@ package renovate
 	privateKeyPathOld?: string
 
 	// Links which are used in PRs, issues and comments.
-	productLinks?: _schema_39 & {
+	productLinks?: #Schema & {
 		[string]: string
 	} | *{
 		documentation: "https://docs.renovatebot.com/"
@@ -1602,20 +1602,20 @@ package renovate
 	pruneStaleBranches?: bool | *true
 
 	// Configuration object for the pub manager
-	pub?: _schema_18 | *{
+	pub?: #Schema | *{
 		fileMatch: ["(^|/)pubspec\\.ya?ml$"]
 		versioning: "npm"
 		...
 	}
 
 	// Configuration object for the puppet manager
-	puppet?: _schema_84 | *{
+	puppet?: #Schema | *{
 		fileMatch: ["(^|/)Puppetfile$"]
 		...
 	}
 
 	// Configuration object for the pyenv manager
-	pyenv?: _schema_9E | *{
+	pyenv?: #Schema | *{
 		fileMatch: ["(^|/)\\.python-version$"]
 		versioning: "docker"
 		pinDigests: false
@@ -1642,13 +1642,13 @@ package renovate
 	redisUrl?: string
 
 	// Configuration object for the regex manager
-	regex?: _schema_90 | *{
+	regex?: #Schema | *{
 		pinDigests: false
 		...
 	}
 
 	// Aliases for registries.
-	registryAliases?: _schema_1D1 & {
+	registryAliases?: #Schema & {
 		[string]: string
 	} | *{
 		...
@@ -1659,7 +1659,7 @@ package renovate
 	registryUrls?: [...string] | *null
 
 	// Configuration to apply when replacing a dependency.
-	replacement?: _schema_7A | *{
+	replacement?: #Schema | *{
 		branchTopic:         "{{{depNameSanitized}}}-replacement"
 		commitMessageAction: "Replace"
 		commitMessageExtra:  "with {{newName}} {{#if isMajor}}{{{prettyNewMajor}}}{{else}}{{#if isSingleVersion}}{{{prettyNewVersion}}}{{else}}{{{newValue}}}{{/if}}{{/if}}"
@@ -1697,7 +1697,7 @@ package renovate
 	reviewersSampleSize?: int | *null
 
 	// Configuration to apply when rolling back a version.
-	rollback?: _schema_D4 | *{
+	rollback?: #Schema | *{
 		branchTopic:         "{{{depNameSanitized}}}-rollback"
 		commitMessageAction: "Roll back"
 		semanticCommitType:  "fix"
@@ -1709,14 +1709,14 @@ package renovate
 	rollbackPrs?: bool | *false
 
 	// Configuration object for the ruby-version manager
-	"ruby-version"?: _schema_94 | *{
+	"ruby-version"?: #Schema | *{
 		fileMatch: ["(^|/)\\.ruby-version$"]
 		versioning: "ruby"
 		...
 	}
 
 	// Configuration object for the sbt manager
-	sbt?: _schema_44 | *{
+	sbt?: #Schema | *{
 		fileMatch: ["\\.sbt$", "project/[^/]*\\.scala$", "project/build\\.properties$", "(^|/)repositories$"]
 		versioning: "ivy"
 		...
@@ -1726,7 +1726,7 @@ package renovate
 	schedule?: [...string] | string | *["at any time"]
 
 	// Object which holds secret name/value pairs.
-	secrets?: _schema_48D & {
+	secrets?: #Schema & {
 		[string]: string
 	} | *{
 		...
@@ -1755,7 +1755,7 @@ package renovate
 	separateMultipleMajor?: bool | *false
 
 	// Configuration object for the setup-cfg manager
-	"setup-cfg"?: _schema_1A | *{
+	"setup-cfg"?: #Schema | *{
 		fileMatch: ["(^|/)setup\\.cfg$"]
 		versioning: "pep440"
 		...
@@ -1766,7 +1766,7 @@ package renovate
 	skipInstalls?: bool | *null
 
 	// Custom strings to use as status check names.
-	statusCheckNames?: _schema_D05 | *{
+	statusCheckNames?: #Schema | *{
 		artifactError:     "renovate/artifacts"
 		configValidation:  "renovate/config-validation"
 		mergeConfidence:   "renovate/merge-confidence"
@@ -1782,7 +1782,7 @@ package renovate
 	suppressNotifications?: [..."artifactErrors" | "branchAutomergeFailure" | "configErrorIssue" | "dependencyLookupWarnings" | "deprecationWarningIssues" | "lockFileErrors" | "missingCredentialsError" | "onboardingClose" | "prEditedNotification" | "prIgnoreNotification"] | *["deprecationWarningIssues"]
 
 	// Configuration object for the swift manager
-	swift?: _schema_A4 | *{
+	swift?: #Schema | *{
 		fileMatch: ["(^|/)Package\\.swift"]
 		versioning: "swift"
 		pinDigests: false
@@ -1790,14 +1790,14 @@ package renovate
 	}
 
 	// Configuration object for the tekton manager
-	tekton?: _schema_C6A | *{
+	tekton?: #Schema | *{
 		fileMatch:
 		[]
 		...
 	}
 
 	// Configuration object for the terraform manager
-	terraform?: _schema_80 | *{
+	terraform?: #Schema | *{
 		commitMessageTopic: "Terraform {{depName}}"
 		fileMatch: ["\\.tf$"]
 		pinDigests: false
@@ -1805,7 +1805,7 @@ package renovate
 	}
 
 	// Configuration object for the terraform-version manager
-	"terraform-version"?: _schema_3F | *{
+	"terraform-version"?: #Schema | *{
 		fileMatch: ["(^|/)\\.terraform-version$"]
 		versioning:     "hashicorp"
 		extractVersion: "^v(?<version>.*)$"
@@ -1813,14 +1813,14 @@ package renovate
 	}
 
 	// Configuration object for the terragrunt manager
-	terragrunt?: _schema_B4 | *{
+	terragrunt?: #Schema | *{
 		commitMessageTopic: "Terragrunt dependency {{depName}}"
 		fileMatch: ["(^|/)terragrunt\\.hcl$"]
 		...
 	}
 
 	// Configuration object for the terragrunt-version manager
-	"terragrunt-version"?: _schema_8E | *{
+	"terragrunt-version"?: #Schema | *{
 		fileMatch: ["(^|/)\\.terragrunt-version$"]
 		versioning:     "hashicorp"
 		extractVersion: "^v(?<version>.+)$"
@@ -1828,7 +1828,7 @@ package renovate
 	}
 
 	// Configuration object for the tflint-plugin manager
-	"tflint-plugin"?: _schema_8D | *{
+	"tflint-plugin"?: #Schema | *{
 		commitMessageTopic: "TFLint plugin {{depName}}"
 		fileMatch: ["\\.tflint\\.hcl$"]
 		extractVersion: "^v(?<version>.*)$"
@@ -1847,7 +1847,7 @@ package renovate
 	transitiveRemediation?: bool | *false
 
 	// Configuration object for the travis manager
-	travis?: _schema_C7 | *{
+	travis?: #Schema | *{
 		fileMatch: ["^\\.travis\\.ya?ml$"]
 		major: {
 			enabled: false
@@ -1898,7 +1898,7 @@ package renovate
 	username?: string
 
 	// Configuration object for the velaci manager
-	velaci?: _schema_4F7 | *{
+	velaci?: #Schema | *{
 		fileMatch: ["(^|/)\\.vela\\.ya?ml$"]
 		...
 	}
@@ -1912,7 +1912,7 @@ package renovate
 
 	// Config to apply when a PR is needed due to a vulnerability in
 	// the existing package version.
-	vulnerabilityAlerts?: _schema_B6 | *{
+	vulnerabilityAlerts?: #Schema | *{
 		groupName: null
 		schedule: []
 		dependencyDashboardApproval: false
@@ -1925,7 +1925,7 @@ package renovate
 	}
 
 	// Configuration object for the woodpecker manager
-	woodpecker?: _schema_B2E | *{
+	woodpecker?: #Schema | *{
 		fileMatch: ["^\\.woodpecker(?:/[^/]+)?\\.ya?ml$"]
 		...
 	}
